@@ -1,6 +1,7 @@
 from flask import Flask
 import json
 import requests
+import pandas
 application = Flask(__name__)
 
 @application.route('/')
@@ -15,6 +16,9 @@ def post_method():
 def post_method1():
     return 'hello there'
 
+@application.route('/hello')
+def new_page():
+    return 'its new page'
 
 if __name__ == "__main__":
     application.run(debug=True, host="0.0.0.0", port=80)
